@@ -1,4 +1,4 @@
-h1. phake_bash_autocomplete
+h1. phake-autocomplete
 
 h3. 1. Install bash-completion package
 
