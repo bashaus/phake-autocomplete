@@ -1,0 +1,26 @@
+_phake()
+{
+    COMPREPLY=()
+
+    local cur prev
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    if [ ! -f ./phake ];
+    then
+        return
+    fi
+
+    local opts
+    opts=`./phake tasks:autocomplete`
+    optscolon=${cur%"${cur##*:}"}
+
+    COMPREPLY=( $(compgen -W "${opts}"  -- ${cur}))
+
+    local i=${#COMPREPLY[*]}
+    while [ $((--i)) -ge 0 ]; do
+        COMPREPLY[$i]=${COMPREPLY[$i]#"$optscolon"}
+    done
+}
+
+complete -F _phake phake
