@@ -8,19 +8,12 @@ Homebrew
 Macports
 <pre>sudo port install bash-completion</pre>
 
+Yum
+<pre>yum install bash-completion</pre>
+
+Apt Get
+<pre>apt-get install bash-completion</pre>
+
 h3. 2. Install the 'phake' auto-complete script into /usr/local/etc/bash_completion.d
 
-h3. 3. Add this task to your Phakefile:
-
-bc.. group('tasks', function()
-{
-    task('autocomplete', function($args)
-    {
-        $application = phake\Builder::$global->get_application();
-    
-        $task_array = $application->get_task_list();
-        $task_names = array_keys($task_array);
-    
-        echo implode(chr(32), $task_names);
-    });
-});
+h3. 3. Relaunch bash/terminal

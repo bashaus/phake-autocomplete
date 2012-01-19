@@ -12,7 +12,7 @@ _phake()
     fi
 
     local opts
-    opts=`./phake tasks:autocomplete`
+    opts=`./phake -T | awk 'BEGIN {x=1}; $x>1 {print $1}'`
     optscolon=${cur%"${cur##*:}"}
 
     COMPREPLY=( $(compgen -W "${opts}"  -- ${cur}))
