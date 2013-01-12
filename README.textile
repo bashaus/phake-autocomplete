@@ -16,4 +16,6 @@ Apt Get
 
 h3. 2. Install the 'phake' auto-complete script into /usr/local/etc/bash_completion.d
 
+<pre>ln -s phake /usr/local/etc/bash_completion.d/phake</pre>
+
 h3. 3. Relaunch bash/terminal
